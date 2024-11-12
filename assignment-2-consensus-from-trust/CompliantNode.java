@@ -34,9 +34,24 @@ public class CompliantNode implements Node {
     }
 
     public Set<Transaction> sendToFollowers() {
-        Set<Transaction> toSend = new HashSet<>(pendingTransactions);
-        pendingTransactions.clear();
-        return toSend;
+
+
+		Set<Transaction> txs = new HashSet<Transaction>();
+
+
+		for (int i = 0; i < 1000; ++i) {
+
+
+			Transaction tx = new Transaction(i);
+
+
+			txs.add(tx);
+
+
+		}
+
+
+        return txs;
     }
 
     public void receiveFromFollowees(Set<Candidate> candidates) {
